@@ -1,6 +1,9 @@
 {
   "version": 2,
   "name": "e-summit-2025",
+  "buildCommand": "echo 'Static site - no build needed'",
+  "outputDirectory": ".",
+  "installCommand": "npm install",
   "rewrites": [
     {
       "source": "/",
