@@ -1,23 +1,31 @@
 {
   "name": "e-summit-2025",
   "version": "1.0.0",
-  "description": "Official website for E-Summit 2025 by E-Cell SIT",
+  "description": "Official website for E-Summit 2025 by E-Cell SIT with Deep Space Purple Theme",
   "main": "index.html",
   "scripts": {
     "start": "npx http-server -p 8000",
-    "dev": "npx http-server -p 8000 -o"
+    "dev": "npx http-server -p 8000 -o",
+    "build": "echo 'Static site - no build needed'",
+    "deploy": "vercel --prod"
   },
   "keywords": [
     "e-summit",
     "e-cell",
     "sit",
     "entrepreneurship",
-    "event-website"
+    "event-website",
+    "deep-space-purple",
+    "glassmorphism",
+    "dark-theme"
   ],
   "author": "E-Cell SIT Web Development Team",
   "license": "ISC",
   "repository": {
     "type": "git",
     "url": "https://github.com/ecell-sit/e-summit-2025"
+  },
+  "engines": {
+    "node": ">=14.0.0"
   }
 }
