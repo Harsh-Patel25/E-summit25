@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact & Register | E-Summit 2025</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        'dark-primary': '#0A0A0F',
+                        'dark-secondary': '#1A0D2E',
+                        'dark-tertiary': '#2D1B3D',
+                        'dark-card': '#1E0A33',
+                        'accent-blue': '#1E90FF',
+                        'accent-emerald': '#48CAE4',
+                        'accent-gold': '#E0AAFF',
+                        'accent-violet': '#5A189A',
+                        'accent-pink': '#9D4EDD',
+                        'accent-cyan': '#4FC3F7',
+                        'text-primary': '#F5F9FF',
+                        'text-secondary': '#C8D3F0',
+                        'text-muted': '#8B9DC3'
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/dark-theme.css">
+    <style>
+        body {
+            opacity: 0;
+            animation: fadeIn 0.8s ease-in forwards;
+        }
+
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+            }
+        }
+
+        .mobile-menu {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+        }
+
+        .mobile-menu.active {
+            max-height: 500px;
+        }
+    </style>
+</head>
+<body class="dark">
+    
+    <!-- Navigation -->
+    <nav id="navbar" class="navbar-dark fixed top-0 left-0 right-0 z-50 transition-all duration-300">
+        <div class="container mx-auto px-4 py-4">
+            <div class="flex justify-between items-center">
+                <div class="flex items-center space-x-3">
+                    <div class="logo-glass w-12 h-12 rounded-xl flex items-center justify-center text-white font-bold text-lg">
+                        E</div>
+                    <span class="navbar-brand text-2xl font-bold">E-Summit 2025</span>
+                </div>
+                <div class="hidden md:flex space-x-2">
+                    <a href="index.html" class="nav-link">Home</a>
+                    <a href="about.html" class="nav-link">About</a>
+                    <a href="schedule.html" class="nav-link">Schedule</a>
+                    <a href="competitions.html" class="nav-link">Events</a>
+                    <a href="contact.html" class="nav-link active">Contact</a>
+                </div>
+                <div class="hidden md:block">
+                    <a href="#register" class="btn-primary">
+                        <i class="fas fa-rocket"></i>
+                        Register Now
+                    </a>
+                </div>
+                <button id="mobile-menu-button" class="md:hidden text-text-primary text-2xl">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+            <div id="mobile-menu" class="mobile-menu md:hidden mt-4 glass rounded-2xl p-4">
+                <div class="flex flex-col space-y-3">
+                    <a href="index.html" class="nav-link">Home</a>
+                    <a href="about.html" class="nav-link">About</a>
+                    <a href="schedule.html" class="nav-link">Schedule</a>
+                    <a href="competitions.html" class="nav-link">Events</a>
+                    <a href="contact.html" class="nav-link active">Contact</a>
+                    <a href="#register" class="btn-primary text-center">
+                        <i class="fas fa-rocket"></i>
+                        Register Now
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+    
+    <!-- Hero Banner -->
+    <section class="hero-dark min-h-[60vh] flex items-center justify-center pt-20 relative overflow-hidden">
+        <div class="particles-dark">
+            <div class="particle-dark" style="left: 30%; animation-delay: 0s; width: 4px; height: 4px; background: var(--accent-pink);"></div>
+            <div class="particle-dark" style="left: 50%; animation-delay: 1s; width: 6px; height: 6px; background: var(--accent-emerald);"></div>
+            <div class="particle-dark" style="left: 70%; animation-delay: 2s; width: 3px; height: 3px; background: var(--accent-blue);"></div>
+        </div>
+        <div class="container mx-auto px-4 text-center hero-content relative z-10">
+            <h1 class="text-6xl md:text-7xl font-bold mb-6 gradient-text-secondary">Get In Touch</h1>
+            <p class="text-2xl md:text-3xl font-light text-accent-pink">We're Here to Help</p>
+        </div>
+    </section>
+
+    <!-- Registration Section -->
+    <section id="register" class="py-20 bg-dark-secondary">
+        <div class="container mx-auto px-4">
+            <div class="max-w-5xl mx-auto text-center mb-16 fade-in-up">
+                <h2 class="text-5xl md:text-6xl font-bold gradient-text mb-6">Register Now</h2>
+                <div class="w-32 h-1 bg-gradient-to-r from-accent-pink to-accent-gold mx-auto mb-8 rounded-full"></div>
+                
+                <div class="glass-card p-16 bg-gradient-to-br from-accent-pink/10 to-accent-violet/10">
+                    <i class="fas fa-ticket-alt text-8xl text-accent-pink mb-8 icon-glow"></i>
+                    <h3 class="text-4xl font-bold text-text-primary mb-6">Secure Your Spot at E-Summit 2025</h3>
+                    <p class="text-xl text-text-secondary mb-12 leading-relaxed">
+                        Don't miss this opportunity to be part of the biggest entrepreneurship event of the year. Limited seats available!
+                    </p>
+                    
+                    <div class="grid md:grid-cols-2 gap-8 mb-12 text-left">
+                        <div class="glass-card p-8">
+                            <i class="fas fa-check-circle text-accent-emerald text-4xl mb-6 icon-glow"></i>
+                            <h4 class="font-bold text-text-primary mb-4 text-xl">What's Included</h4>
+                            <ul class="text-text-secondary space-y-3">
+                                <li class="flex items-center"><i class="fas fa-check text-accent-emerald mr-3"></i>Access to all sessions</li>
+                                <li class="flex items-center"><i class="fas fa-check text-accent-emerald mr-3"></i>Workshop materials</li>
+                                <li class="flex items-center"><i class="fas fa-check text-accent-emerald mr-3"></i>Event kit & goodies</li>
+                                <li class="flex items-center"><i class="fas fa-check text-accent-emerald mr-3"></i>Networking opportunities</li>
+                                <li class="flex items-center"><i class="fas fa-check text-accent-emerald mr-3"></i>Certificate of participation</li>
+                                <li class="flex items-center"><i class="fas fa-check text-accent-emerald mr-3"></i>Refreshments & lunch</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="glass-card p-8">
+                            <i class="fas fa-info-circle text-accent-blue text-4xl mb-6 icon-glow"></i>
+                            <h4 class="font-bold text-text-primary mb-4 text-xl">Eligibility</h4>
+                            <ul class="text-text-secondary space-y-3">
+                                <li class="flex items-center"><i class="fas fa-arrow-right text-accent-blue mr-3"></i>Open to all students</li>
+                                <li class="flex items-center"><i class="fas fa-arrow-right text-accent-blue mr-3"></i>Aspiring entrepreneurs</li>
+                                <li class="flex items-center"><i class="fas fa-arrow-right text-accent-blue mr-3"></i>Startup enthusiasts</li>
+                                <li class="flex items-center"><i class="fas fa-arrow-right text-accent-blue mr-3"></i>No prior experience needed</li>
+                                <li class="flex items-center"><i class="fas fa-arrow-right text-accent-blue mr-3"></i>Early bird discount available</li>
+                                <li class="flex items-center"><i class="fas fa-arrow-right text-accent-blue mr-3"></i>Group registrations welcome</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <a href="https://forms.google.com" target="_blank" class="btn-primary text-2xl px-16 py-6 shadow-2xl">
+                        <i class="fas fa-user-plus"></i>
+                        Register Now - It's Free!
+                        <i class="fas fa-rocket"></i>
+                    </a>
+                    
+                    <p class="text-text-muted mt-8 text-lg">Registration closes on November 4th, 2025</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Information -->
+    <section class="py-20 bg-dark-primary">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16 fade-in-up">
+                <h2 class="text-5xl font-bold gradient-text-secondary mb-6">Contact Information</h2>
+                <div class="w-32 h-1 bg-gradient-to-r from-accent-emerald to-accent-gold mx-auto rounded-full"></div>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-16 max-w-7xl mx-auto">
+                <!-- Contact Details -->
+                <div class="fade-in-up">
+                    <h3 class="text-3xl font-bold gradient-text mb-10">Get In Touch</h3>
+                    <div class="space-y-8">
+                        <div class="glass-card p-8 flex items-start space-x-6">
+                            <div class="w-16 h-16 bg-gradient-to-br from-accent-pink to-accent-violet rounded-2xl flex items-center justify-center text-white flex-shrink-0 shadow-lg">
+                                <i class="fas fa-envelope text-2xl icon-glow"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-text-primary mb-3 text-xl">Email</h4>
+                                <a href="mailto:ecell@sit.edu" class="text-accent-pink hover:text-accent-violet transition-colors text-lg">ecell@sit.edu</a>
+                                <p class="text-text-secondary mt-2">We'll respond within 24 hours</p>
+                            </div>
+                        </div>
+                        
+                        <div class="glass-card p-8 flex items-start space-x-6">
+                            <div class="w-16 h-16 bg-gradient-to-br from-accent-emerald to-accent-gold rounded-2xl flex items-center justify-center text-white flex-shrink-0 shadow-lg">
+                                <i class="fas fa-phone text-2xl icon-glow"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-text-primary mb-3 text-xl">Phone</h4>
+                                <a href="tel:+919876543210" class="text-accent-emerald hover:text-accent-gold transition-colors text-lg">+91 98765 43210</a>
+                                <p class="text-text-secondary mt-2">Mon - Fri, 9 AM - 6 PM</p>
+                            </div>
+                        </div>
+                        
+                        <div class="glass-card p-8 flex items-start space-x-6">
+                            <div class="w-16 h-16 bg-gradient-to-br from-accent-blue to-accent-violet rounded-2xl flex items-center justify-center text-white flex-shrink-0 shadow-lg">
+                                <i class="fas fa-map-marker-alt text-2xl icon-glow"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-text-primary mb-3 text-xl">Address</h4>
+                                <p class="text-text-secondary text-lg leading-relaxed">Saffrony Institute of Technology<br>Mehsana, Gujarat 384001</p>
+                            </div>
+                        </div>
+                        
+                        <div class="glass-card p-8">
+                            <h4 class="font-bold text-text-primary mb-6 text-xl">Follow Us</h4>
+                            <div class="flex space-x-4">
+                                <a href="#" class="w-14 h-14 bg-gradient-to-br from-accent-pink to-accent-violet rounded-2xl flex items-center justify-center text-white hover:scale-110 transition-all duration-300 shadow-lg">
+                                    <i class="fab fa-instagram text-xl"></i>
+                                </a>
+                                <a href="#" class="w-14 h-14 bg-gradient-to-br from-accent-blue to-accent-emerald rounded-2xl flex items-center justify-center text-white hover:scale-110 transition-all duration-300 shadow-lg">
+                                    <i class="fab fa-linkedin text-xl"></i>
+                                </a>
+                                <a href="#" class="w-14 h-14 bg-gradient-to-br from-accent-emerald to-accent-gold rounded-2xl flex items-center justify-center text-white hover:scale-110 transition-all duration-300 shadow-lg">
+                                    <i class="fab fa-facebook text-xl"></i>
+                                </a>
+                                <a href="#" class="w-14 h-14 bg-gradient-to-br from-accent-gold to-accent-pink rounded-2xl flex items-center justify-center text-white hover:scale-110 transition-all duration-300 shadow-lg">
+                                    <i class="fab fa-twitter text-xl"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Map -->
+                <div class="fade-in-up">
+                    <h3 class="text-3xl font-bold gradient-text-secondary mb-10">Location</h3>
+                    <div class="glass-card p-4 h-full min-h-[600px]">
+                        <iframe 
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14658.123!2d72.3693!3d23.5880!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjPCsDM1JzE2LjgiTiA3MsKwMjInMDkuNSJF!5e0!3m2!1sen!2sin!4v1234567890"
+                            width="100%" 
+                            height="550" 
+                            style="border:0; border-radius: 16px;" 
+                            allowfullscreen="" 
+                            loading="lazy">
+                        </iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-3 gap-8 mb-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">E-Summit 2025</h3>
+                    <p class="text-gray-400">Organized by E-Cell, Saffrony Institute of Technology, Mehsana</p>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Quick Links</h3>
+                    <div class="space-y-2">
+                        <a href="index.html" class="block text-gray-400 hover:text-purple-400">Home</a>
+                        <a href="about.html" class="block text-gray-400 hover:text-purple-400">About</a>
+                        <a href="schedule.html" class="block text-gray-400 hover:text-purple-400">Schedule</a>
+                        <a href="competitions.html" class="block text-gray-400 hover:text-purple-400">Events</a>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Follow Us</h3>
+                    <div class="flex space-x-4">
+                        <a href="#" class="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-purple-600"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-purple-600"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" class="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-purple-600"><i class="fab fa-facebook"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 pt-8 text-center">
+                <p class="text-gray-400 text-sm">© 2025 E-Cell, SIT. All rights reserved. Built with <i class="fas fa-heart text-red-500"></i> by E-Cell SIT Web Team</p>
+            </div>
+        </div>
+    </footer>
+    
+    <script>
+        document.getElementById('mobile-menu-button').addEventListener('click', function() {
+            const menu = document.getElementById('mobile-menu');
+            const icon = this.querySelector('i');
+            menu.classList.toggle('active');
+            icon.classList.toggle('fa-bars');
+            icon.classList.toggle('fa-times');
+        });
+    </script>
+</body>
+</html>

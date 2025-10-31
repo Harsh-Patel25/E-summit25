@@ -1,0 +1,779 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="E-Summit 2025 - Entrepreneurship summit by E-Cell SIT">
+    <title>E-Summit 2025 | Home</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        'dark-primary': '#0A0A0F',
+                        'dark-secondary': '#1A0D2E',
+                        'dark-tertiary': '#2D1B3D',
+                        'dark-card': '#1E0A33',
+                        'accent-blue': '#1E90FF',
+                        'accent-emerald': '#48CAE4',
+                        'accent-gold': '#E0AAFF',
+                        'accent-violet': '#5A189A',
+                        'accent-pink': '#9D4EDD',
+                        'accent-cyan': '#4FC3F7',
+                        'text-primary': '#F5F9FF',
+                        'text-secondary': '#C8D3F0',
+                        'text-muted': '#8B9DC3'
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/dark-theme.css">
+    <style>
+        /* Galaxy Animation Styles */
+        #galaxyCanvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+        }
+
+        .gradient-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, 
+                rgba(5, 8, 22, 0.8) 0%, 
+                rgba(30, 144, 255, 0.15) 50%, 
+                rgba(0, 255, 255, 0.1) 100%
+            );
+            z-index: 1;
+            pointer-events: none;
+        }
+
+        body {
+            opacity: 0;
+            animation: fadeIn 0.8s ease-in forwards;
+        }
+
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+            }
+        }
+
+        /* Mobile menu */
+        .mobile-menu {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+        }
+
+        .mobile-menu.active {
+            max-height: 500px;
+        }
+
+        /* Statistics counter animation */
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 800;
+        }
+
+        /* Custom animations */
+        @keyframes slideInFromLeft {
+            0% {
+                transform: translateX(-100px);
+                opacity: 0;
+            }
+
+            100% {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideInFromRight {
+            0% {
+                transform: translateX(100px);
+                opacity: 0;
+            }
+
+            100% {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+        .slide-in-left {
+            animation: slideInFromLeft 0.8s ease-out;
+        }
+
+        .slide-in-right {
+            animation: slideInFromRight 0.8s ease-out;
+        }
+
+        /* Ensure content is above galaxy canvas */
+        nav, section, footer, .fab-dark {
+            position: relative;
+            z-index: 10;
+        }
+
+        .hero-dark .hero-content {
+            position: relative;
+            z-index: 20;
+        }
+
+        /* Disable custom cursor */
+        body, body * {
+            cursor: default !important;
+        }
+
+        .custom-cursor {
+            display: none !important;
+        }
+    </style>
+</head>
+
+<body class="dark">
+
+    <!-- Galaxy Canvas Background -->
+    <canvas id="galaxyCanvas"></canvas>
+    
+    <!-- Gradient Overlay -->
+    <div class="gradient-overlay"></div>
+
+    <!-- Navigation -->
+    <nav id="navbar" class="navbar-dark fixed top-0 left-0 right-0 z-50 transition-all duration-300">
+        <div class="container mx-auto px-4 py-4">
+            <div class="flex justify-between items-center">
+                <div class="flex items-center space-x-3 slide-in-left">
+                    <div class="logo-glass w-12 h-12 rounded-xl flex items-center justify-center text-white font-bold text-lg">
+                        E</div>
+                    <span class="navbar-brand text-2xl font-bold">E-Summit 2025</span>
+                </div>
+                <div class="hidden md:flex space-x-2">
+                    <a href="index.html" class="nav-link active">Home</a>
+                    <a href="about.html" class="nav-link">About</a>
+                    <a href="schedule.html" class="nav-link">Schedule</a>
+                    <a href="competitions.html" class="nav-link">Events</a>
+                    <a href="contact.html" class="nav-link">Contact</a>
+                </div>
+                <div class="hidden md:block slide-in-right">
+                    <a href="contact.html#register" class="btn-primary">
+                        <i class="fas fa-rocket"></i>
+                        Register Now
+                    </a>
+                </div>
+                <button id="mobile-menu-button" class="md:hidden text-text-primary text-2xl">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+            <div id="mobile-menu" class="mobile-menu md:hidden mt-4 glass rounded-2xl p-4">
+                <div class="flex flex-col space-y-3">
+                    <a href="index.html" class="nav-link active">Home</a>
+                    <a href="about.html" class="nav-link">About</a>
+                    <a href="schedule.html" class="nav-link">Schedule</a>
+                    <a href="competitions.html" class="nav-link">Events</a>
+                    <a href="contact.html" class="nav-link">Contact</a>
+                    <a href="contact.html#register" class="btn-primary text-center">
+                        <i class="fas fa-rocket"></i>
+                        Register Now
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Floating Action Button -->
+    <a href="contact.html#register" class="fab-dark">
+        <i class="fas fa-rocket text-xl"></i>
+    </a>
+
+    <!-- Hero Section with Galaxy Animation -->
+    <section class="hero-dark min-h-screen flex items-center justify-center pt-20 relative overflow-hidden" style="background: transparent;">
+        <!-- Particles Background -->
+        <div class="particles-dark">
+            <div class="particle-dark"
+                style="left: 10%; animation-delay: 0s; width: 4px; height: 4px; background: var(--accent-royal);"></div>
+            <div class="particle-dark"
+                style="left: 20%; animation-delay: 1s; width: 6px; height: 6px; background: var(--accent-electric);">
+            </div>
+            <div class="particle-dark"
+                style="left: 30%; animation-delay: 2s; width: 3px; height: 3px; background: var(--accent-amethyst);">
+            </div>
+            <div class="particle-dark"
+                style="left: 40%; animation-delay: 0.5s; width: 5px; height: 5px; background: var(--accent-neon);">
+            </div>
+            <div class="particle-dark"
+                style="left: 50%; animation-delay: 1.5s; width: 4px; height: 4px; background: var(--accent-magenta);">
+            </div>
+            <div class="particle-dark"
+                style="left: 60%; animation-delay: 2.5s; width: 6px; height: 6px; background: var(--accent-amethyst);">
+            </div>
+            <div class="particle-dark"
+                style="left: 70%; animation-delay: 0.8s; width: 3px; height: 3px; background: var(--accent-electric);">
+            </div>
+            <div class="particle-dark"
+                style="left: 80%; animation-delay: 1.8s; width: 5px; height: 5px; background: var(--accent-royal);">
+            </div>
+            <div class="particle-dark"
+                style="left: 90%; animation-delay: 2.2s; width: 4px; height: 4px; background: var(--accent-neon);">
+            </div>
+        </div>
+
+        <div class="container mx-auto px-4 py-20 hero-content relative z-10">
+            <div class="text-center">
+                <div class="inline-block mb-8 fade-in-up">
+                    <span
+                        class="glass px-8 py-3 rounded-full text-sm font-semibold text-text-secondary border border-white/20">
+                        <i class="fas fa-star text-accent-amethyst mr-2"></i>
+                        E-Cell, SIT Mehsana Presents
+                    </span>
+                </div>
+                <h1 class="text-6xl md:text-8xl font-bold mb-8 leading-tight fade-in-up gradient-text">
+                    E-Summit 2025
+                </h1>
+                <p class="text-2xl md:text-3xl mb-6 font-light fade-in-up" style="color: var(--accent-magenta);">
+                    Pushing Boundaries, Reaching Peaks
+                </p>
+                <div
+                    class="flex flex-col md:flex-row items-center justify-center space-y-4 md:space-y-0 md:space-x-12 mb-10 text-lg fade-in-up">
+                    <div class="flex items-center space-x-3 glass px-6 py-3 rounded-full">
+                        <i class="fas fa-calendar-alt text-accent-secondary icon-glow"></i>
+                        <span class="text-text-primary font-medium">6th & 7th November 2025</span>
+                    </div>
+                    <div class="flex items-center space-x-3 glass px-6 py-3 rounded-full">
+                        <i class="fas fa-map-marker-alt text-accent-amethyst icon-glow"></i>
+                        <span class="text-text-primary font-medium">SIT Mehsana, Gujarat</span>
+                    </div>
+                </div>
+                <p
+                    class="text-xl md:text-2xl mb-12 max-w-4xl mx-auto font-light text-text-secondary fade-in-up leading-relaxed">
+                    Join us for two days of inspiring workshops, engaging competitions, and insightful speaker sessions
+                    that will transform your entrepreneurial journey.
+                </p>
+                <div
+                    class="flex flex-col sm:flex-row items-center justify-center space-y-6 sm:space-y-0 sm:space-x-6 fade-in-up mb-16">
+                    <a href="contact.html#register" class="btn-primary text-xl px-10 py-4">
+                        <i class="fas fa-rocket"></i>
+                        Register Now
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                    <a href="about.html" class="btn-secondary text-xl px-10 py-4">
+                        <i class="fas fa-info-circle"></i>
+                        Learn More
+                    </a>
+                </div>
+
+                <!-- Countdown Timer -->
+                <div class="fade-in-up">
+                    <p class="font-semibold mb-6 text-xl" style="color: var(--accent-gold);">
+                        <i class="fas fa-clock mr-2"></i>
+                        Only <span id="days-text" class="gradient-text-hero">X</span> days left to register!
+                    </p>
+                    <div id="countdown" class="flex justify-center space-x-4 md:space-x-8">
+                        <div class="countdown-dark">
+                            <div id="days" class="text-4xl md:text-5xl font-bold gradient-text mb-2">00</div>
+                            <div class="text-sm text-text-secondary font-medium">Days</div>
+                        </div>
+                        <div class="countdown-dark">
+                            <div id="hours" class="text-4xl md:text-5xl font-bold gradient-text mb-2">00</div>
+                            <div class="text-sm text-text-secondary font-medium">Hours</div>
+                        </div>
+                        <div class="countdown-dark">
+                            <div id="minutes" class="text-4xl md:text-5xl font-bold gradient-text mb-2">00</div>
+                            <div class="text-sm text-text-secondary font-medium">Minutes</div>
+                        </div>
+                        <div class="countdown-dark">
+                            <div id="seconds" class="text-4xl md:text-5xl font-bold gradient-text mb-2">00</div>
+                            <div class="text-sm text-text-secondary font-medium">Seconds</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Statistics Section -->
+    <section class="py-20 bg-dark-secondary relative">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+                <div class="fade-in-up stat-card">
+                    <div class="stat-number gradient-text text-5xl mb-4" data-target="500">0</div>
+                    <p class="text-text-secondary font-semibold text-lg">Expected Participants</p>
+                </div>
+                <div class="fade-in-up stat-card">
+                    <div class="stat-number gradient-text-gold text-5xl mb-4" data-target="15">0</div>
+                    <p class="text-text-secondary font-semibold text-lg">Industry Speakers</p>
+                </div>
+                <div class="fade-in-up stat-card">
+                    <div class="stat-number gradient-text-comp text-5xl mb-4" data-target="10">0</div>
+                    <p class="text-text-secondary font-semibold text-lg">Workshops</p>
+                </div>
+                <div class="fade-in-up stat-card">
+                    <div class="stat-number gradient-text-secondary text-5xl mb-4" data-target="2">0</div>
+                    <p class="text-text-secondary font-semibold text-lg">Days of Innovation</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Events/Competitions Section -->
+    <section class="py-20 bg-dark-primary">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16 fade-in-up">
+                <h2 class="text-5xl md:text-6xl font-bold gradient-text-comp mb-6">Events & Competitions</h2>
+                <div class="w-32 h-1 mx-auto mb-8 rounded-full" style="background: var(--gradient-blue-cyan);">
+                </div>
+                <p class="text-xl text-text-secondary max-w-4xl mx-auto leading-relaxed">Participate in exciting
+                    competitions and engaging events designed to challenge your entrepreneurial skills and strategic
+                    thinking</p>
+            </div>
+            <div class="grid md:grid-cols-3 gap-8 max-w-7xl mx-auto">
+                <div class="competition-card fade-in-up">
+                    <div
+                        class="w-20 h-20 rounded-2xl flex items-center justify-center text-white text-4xl mb-8 mx-auto shadow-lg" style="background: var(--gradient-purple-blue);">
+                        <i class="fas fa-calendar-alt icon-glow" style="color: var(--accent-cyan);"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-text-primary mb-4 text-center">Event Schedule</h3>
+                    <p class="text-text-secondary text-center mb-8 leading-relaxed">View complete Day 1 & Day 2 schedule
+                        with all sessions, workshops, and timings</p>
+                    <div class="text-center">
+                        <a href="schedule.html" class="btn-primary">
+                            <i class="fas fa-eye"></i>
+                            View Schedule
+                        </a>
+                    </div>
+                </div>
+
+                <div class="competition-card fade-in-up">
+                    <div
+                        class="w-20 h-20 rounded-2xl flex items-center justify-center text-white text-4xl mb-8 mx-auto shadow-lg" style="background: var(--gradient-blue-cyan);">
+                        <i class="fas fa-trophy icon-glow" style="color: var(--accent-blue);"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-text-primary mb-4 text-center">IPL Auction</h3>
+                    <p class="text-text-secondary text-center mb-8 leading-relaxed">Strategic team building competition
+                        with exciting prizes and challenges</p>
+                    <div class="text-center">
+                        <a href="competitions.html" class="btn-secondary">
+                            <i class="fas fa-info-circle"></i>
+                            Learn More
+                        </a>
+                    </div>
+                </div>
+
+                <div class="competition-card fade-in-up">
+                    <div
+                        class="w-20 h-20 rounded-2xl flex items-center justify-center text-white text-4xl mb-8 mx-auto shadow-lg" style="background: var(--gradient-purple-blue);">
+                        <i class="fas fa-gamepad icon-glow" style="color: var(--accent-cyan);"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-text-primary mb-4 text-center">Squid Game</h3>
+                    <p class="text-text-secondary text-center mb-8 leading-relaxed">Fun and engaging team challenges
+                        inspired by the popular series</p>
+                    <div class="text-center">
+                        <a href="competitions.html" class="btn-primary">
+                            <i class="fas fa-user-plus"></i>
+                            Register Now
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Speakers Section -->
+    <section class="py-20 bg-dark-secondary">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16 fade-in-up">
+                <h2 class="text-5xl md:text-6xl font-bold gradient-text-gold mb-6">Our Speakers</h2>
+                <div class="w-32 h-1 mx-auto mb-8 rounded-full" style="background: var(--gradient-purple-gold);">
+                </div>
+                <p class="text-xl text-text-secondary max-w-4xl mx-auto leading-relaxed">Get inspired by successful
+                    entrepreneurs and industry experts who will share their journey, insights, and valuable lessons</p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8 max-w-7xl mx-auto mb-16">
+                <!-- Speaker 1 -->
+                <div class="speaker-card p-8 fade-in-up">
+                    <div
+                        class="h-80 bg-gradient-to-br from-accent-primary/20 to-accent-secondary/20 rounded-2xl flex items-center justify-center mb-8">
+                        <i class="fas fa-user-circle text-9xl text-accent-primary icon-glow"></i>
+                    </div>
+                    <div class="text-center">
+                        <h3 class="text-2xl font-bold text-text-primary mb-3">Guest Speaker 1</h3>
+                        <p class="font-semibold mb-4" style="color: var(--accent-gold);">Founder & CEO, Tech Startup</p>
+                        <p class="text-text-secondary mb-6 leading-relaxed">Inspiring talk on building successful
+                            startups from scratch and navigating the entrepreneurial journey in the digital age</p>
+                        <div class="flex justify-center space-x-4">
+                            <a href="#"
+                                class="text-text-muted hover:text-accent-electric transition-all duration-300 transform hover:scale-110">
+                                <i class="fab fa-linkedin text-2xl"></i>
+                            </a>
+                            <a href="#"
+                                class="text-text-muted hover:text-accent-electric transition-all duration-300 transform hover:scale-110">
+                                <i class="fab fa-twitter text-2xl"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Speaker 2 -->
+                <div class="speaker-card p-8 fade-in-up">
+                    <div
+                        class="h-80 bg-gradient-to-br from-accent-secondary/20 to-accent-glow/20 rounded-2xl flex items-center justify-center mb-8">
+                        <i class="fas fa-user-circle text-9xl text-accent-secondary icon-glow"></i>
+                    </div>
+                    <div class="text-center">
+                        <h3 class="text-2xl font-bold text-text-primary mb-3">Guest Speaker 2</h3>
+                        <p class="font-semibold mb-4" style="color: var(--accent-gold);">Serial Entrepreneur & Investor</p>
+                        <p class="text-text-secondary mb-6 leading-relaxed">Expert insights on raising funding, scaling
+                            businesses, and making strategic decisions in competitive markets</p>
+                        <div class="flex justify-center space-x-4">
+                            <a href="#"
+                                class="text-text-muted hover:text-accent-secondary transition-all duration-300 transform hover:scale-110">
+                                <i class="fab fa-linkedin text-2xl"></i>
+                            </a>
+                            <a href="#"
+                                class="text-text-muted hover:text-accent-secondary transition-all duration-300 transform hover:scale-110">
+                                <i class="fab fa-twitter text-2xl"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Speaker 3 -->
+                <div class="speaker-card p-8 fade-in-up">
+                    <div
+                        class="h-80 bg-gradient-to-br from-accent-glow/20 to-accent-amethyst/20 rounded-2xl flex items-center justify-center mb-8">
+                        <i class="fas fa-user-circle text-9xl text-accent-glow icon-glow"></i>
+                    </div>
+                    <div class="text-center">
+                        <h3 class="text-2xl font-bold text-text-primary mb-3">Guest Speaker 3</h3>
+                        <p class="font-semibold mb-4" style="color: var(--accent-gold);">Innovation Expert & Author</p>
+                        <p class="text-text-secondary mb-6 leading-relaxed">Engaging discussion on innovation trends,
+                            emerging technologies, and the future of entrepreneurship</p>
+                        <div class="flex justify-center space-x-4">
+                            <a href="#"
+                                class="text-text-muted hover:text-accent-glow transition-all duration-300 transform hover:scale-110">
+                                <i class="fab fa-linkedin text-2xl"></i>
+                            </a>
+                            <a href="#"
+                                class="text-text-muted hover:text-accent-glow transition-all duration-300 transform hover:scale-110">
+                                <i class="fab fa-twitter text-2xl"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center mb-16 fade-in-up">
+                <p class="text-text-muted italic text-xl">
+                    <i class="fas fa-star text-accent-amethyst mr-2"></i>
+                    More speakers to be announced soon!
+                </p>
+            </div>
+
+            <!-- What to Expect -->
+            <div class="glass-card p-12 max-w-5xl mx-auto fade-in-up">
+                <h2 class="text-4xl font-bold gradient-text-secondary mb-10 text-center">What to Expect from Speaker
+                    Sessions</h2>
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div class="flex items-start space-x-6">
+                        <div
+                            class="w-16 h-16 bg-gradient-to-br from-accent-primary to-accent-secondary rounded-2xl flex items-center justify-center text-white flex-shrink-0 shadow-lg">
+                            <i class="fas fa-microphone-alt text-2xl icon-glow"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-text-primary mb-3 text-xl">Inspirational Talks</h3>
+                            <p class="text-text-secondary leading-relaxed">Real stories from successful entrepreneurs
+                                about their journey, challenges, and breakthroughs</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start space-x-6">
+                        <div
+                            class="w-16 h-16 bg-gradient-to-br from-accent-secondary to-accent-glow rounded-2xl flex items-center justify-center text-white flex-shrink-0 shadow-lg">
+                            <i class="fas fa-lightbulb text-2xl icon-glow"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-text-primary mb-3 text-xl">Practical Insights</h3>
+                            <p class="text-text-secondary leading-relaxed">Actionable advice on building and scaling
+                                startups in today's competitive market</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start space-x-6">
+                        <div
+                            class="w-16 h-16 bg-gradient-to-br from-accent-glow to-accent-amethyst rounded-2xl flex items-center justify-center text-white flex-shrink-0 shadow-lg">
+                            <i class="fas fa-comments text-2xl icon-glow"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-text-primary mb-3 text-xl">Q&A Sessions</h3>
+                            <p class="text-text-secondary leading-relaxed">Interactive discussions and opportunity to
+                                ask questions directly to industry experts</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start space-x-6">
+                        <div
+                            class="w-16 h-16 bg-gradient-to-br from-accent-amethyst to-accent-primary rounded-2xl flex items-center justify-center text-white flex-shrink-0 shadow-lg">
+                            <i class="fas fa-network-wired text-2xl icon-glow"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-text-primary mb-3 text-xl">Networking</h3>
+                            <p class="text-text-secondary leading-relaxed">Connect with speakers and fellow aspiring
+                                entrepreneurs to build valuable relationships</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="py-20 bg-dark-primary">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16 fade-in-up">
+                <h2 class="text-5xl md:text-6xl font-bold gradient-text mb-6">What Participants Say</h2>
+                <div class="w-32 h-1 mx-auto mb-8 rounded-full" style="background: var(--gradient-purple-magenta);"></div>
+                <p class="text-xl text-text-secondary max-w-4xl mx-auto leading-relaxed">Hear from previous E-Summit
+                    participants about their transformative experiences and success stories</p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8 max-w-7xl mx-auto">
+                <div class="glass-card p-10 fade-in-up">
+                    <div class="flex items-center mb-8">
+                        <div
+                            class="w-16 h-16 bg-gradient-to-br from-accent-primary to-accent-secondary rounded-2xl flex items-center justify-center text-white font-bold text-xl mr-6 shadow-lg">
+                            A
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-text-primary text-xl">Arjun Patel</h4>
+                            <p class="text-accent-amethyst font-semibold">Startup Founder</p>
+                        </div>
+                    </div>
+                    <p class="text-text-secondary italic mb-6 text-lg leading-relaxed">"E-Summit 2024 was a game-changer
+                        for me. The networking opportunities and insights from industry leaders helped me launch my
+                        startup successfully."</p>
+                    <div class="flex text-accent-amethyst text-xl space-x-1">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                </div>
+
+                <div class="glass-card p-10 fade-in-up">
+                    <div class="flex items-center mb-8">
+                        <div
+                            class="w-16 h-16 bg-gradient-to-br from-accent-secondary to-accent-glow rounded-2xl flex items-center justify-center text-white font-bold text-xl mr-6 shadow-lg">
+                            P
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-text-primary text-xl">Priya Sharma</h4>
+                            <p class="text-accent-electric font-semibold">Tech Entrepreneur</p>
+                        </div>
+                    </div>
+                    <p class="text-text-secondary italic mb-6 text-lg leading-relaxed">"The workshops were incredibly
+                        practical and the speaker sessions provided real-world insights that I still use in my business
+                        today."</p>
+                    <div class="flex text-accent-amethyst text-xl space-x-1">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                </div>
+
+                <div class="glass-card p-10 fade-in-up">
+                    <div class="flex items-center mb-8">
+                        <div
+                            class="w-16 h-16 bg-gradient-to-br from-accent-glow to-accent-amethyst rounded-2xl flex items-center justify-center text-white font-bold text-xl mr-6 shadow-lg">
+                            R
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-text-primary text-xl">Rahul Mehta</h4>
+                            <p class="text-accent-glow font-semibold">Student Entrepreneur</p>
+                        </div>
+                    </div>
+                    <p class="text-text-secondary italic mb-6 text-lg leading-relaxed">"As a student, E-Summit opened my
+                        eyes to the possibilities in entrepreneurship. The competitions were fun and educational!"</p>
+                    <div class="flex text-accent-amethyst text-xl space-x-1">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Registration CTA Section -->
+    <section class="py-20 relative overflow-hidden" style="background: var(--bg-primary);">
+    <div class="absolute inset-0" style="background: var(--gradient-hero); opacity: 0.15;"></div>
+    <div class="container mx-auto px-4 text-center relative z-10">
+        <div class="max-w-5xl mx-auto fade-in-up">
+            <h2 class="text-5xl md:text-7xl font-bold gradient-text mb-8">Ready to Join E-Summit 2025?</h2>
+            <p class="text-2xl text-text-secondary mb-10 leading-relaxed">Don't miss this opportunity to connect, learn,
+                and grow with fellow entrepreneurs in an inspiring environment</p>
+            <div class="mb-12">
+                <p class="font-semibold text-2xl mb-6" style="color: var(--accent-magenta);">
+                    <i class="fas fa-clock mr-3"></i>
+                    Only <span id="days-left" class="gradient-text-hero">X</span> days left to register!
+                </p>
+            </div>
+            <div class="flex flex-col sm:flex-row items-center justify-center space-y-6 sm:space-y-0 sm:space-x-8">
+                <a href="contact.html#register" class="btn-primary text-2xl px-12 py-5">
+                    <i class="fas fa-rocket"></i>
+                    Register Now
+                    <i class="fas fa-arrow-right"></i>
+                </a>
+                <a href="about.html" class="btn-secondary text-2xl px-12 py-5">
+                    <i class="fas fa-info-circle"></i>
+                    Learn More
+                </a>
+            </div>
+        </div>
+    </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="section-footer text-text-primary py-20"></footer>
+    <div class="container mx-auto px-4">
+        <div class="grid md:grid-cols-4 gap-12 mb-16">
+            <div class="md:col-span-2">
+                <div class="flex items-center space-x-4 mb-6">
+                    <div
+                        class="w-16 h-16 bg-gradient-to-br from-accent-primary to-accent-secondary rounded-2xl flex items-center justify-center text-white font-bold text-2xl shadow-lg">
+                        E
+                    </div>
+                    <h3 class="text-3xl font-bold gradient-text">E-Summit 2025</h3>
+                </div>
+                <p class="text-text-secondary mb-6 text-lg leading-relaxed">Organized by E-Cell, Saffrony Institute of
+                    Technology, Mehsana</p>
+                <p class="text-text-secondary mb-8 leading-relaxed">Join us for an inspiring journey of
+                    entrepreneurship, innovation, and networking with industry leaders and fellow entrepreneurs.</p>
+
+                <!-- Venue Map Placeholder -->
+                <div class="glass-card p-6">
+                    <h4 class="font-semibold mb-4 text-xl" style="color: var(--accent-cyan);">
+                        <i class="fas fa-map-marker-alt mr-2"></i>
+                        Venue Location
+                    </h4>
+                    <p class="text-text-secondary mb-4">
+                        Saffrony Institute of Technology, Mehsana, Gujarat
+                    </p>
+                    <div
+                        class="bg-dark-secondary rounded-xl h-40 flex items-center justify-center text-text-muted border border-white/10">
+                        <div class="text-center">
+                            <i class="fas fa-map text-4xl mb-2 text-accent-electric"></i>
+                            <p>Interactive Map Coming Soon</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div>
+                <h3 class="text-2xl font-bold mb-6 gradient-text-secondary">Quick Links</h3>
+                <div class="space-y-4">
+                    <a href="index.html"
+                        class="block text-text-secondary hover:text-accent-electric transition-all duration-300 transform hover:translate-x-2">
+                        <i class="fas fa-home mr-3"></i>Home
+                    </a>
+                    <a href="about.html"
+                        class="block text-text-secondary hover:text-accent-secondary transition-all duration-300 transform hover:translate-x-2">
+                        <i class="fas fa-info-circle mr-3"></i>About
+                    </a>
+                    <a href="schedule.html"
+                        class="block text-text-secondary hover:text-accent-amethyst transition-all duration-300 transform hover:translate-x-2">
+                        <i class="fas fa-calendar-alt mr-3"></i>Schedule
+                    </a>
+                    <a href="competitions.html"
+                        class="block text-text-secondary hover:text-accent-glow transition-all duration-300 transform hover:translate-x-2">
+                        <i class="fas fa-trophy mr-3"></i>Events
+                    </a>
+                    <a href="contact.html"
+                        class="block text-text-secondary hover:text-accent-electric transition-all duration-300 transform hover:translate-x-2">
+                        <i class="fas fa-envelope mr-3"></i>Contact
+                    </a>
+                </div>
+            </div>
+
+            <div>
+                <h3 class="text-2xl font-bold mb-6 gradient-text">Connect With Us</h3>
+                <div class="flex space-x-4 mb-8">
+                    <a href="#"
+                        class="w-14 h-14 bg-gradient-to-br from-accent-glow to-accent-amethyst rounded-2xl flex items-center justify-center hover:scale-110 transition-all duration-300 shadow-lg">
+                        <i class="fab fa-instagram text-xl"></i>
+                    </a>
+                    <a href="#"
+                        class="w-14 h-14 bg-gradient-to-br from-accent-primary to-accent-secondary rounded-2xl flex items-center justify-center hover:scale-110 transition-all duration-300 shadow-lg">
+                        <i class="fab fa-linkedin text-xl"></i>
+                    </a>
+                    <a href="#"
+                        class="w-14 h-14 bg-gradient-to-br from-accent-secondary to-accent-glow rounded-2xl flex items-center justify-center hover:scale-110 transition-all duration-300 shadow-lg">
+                        <i class="fab fa-facebook text-xl"></i>
+                    </a>
+                </div>
+
+                <div class="space-y-4">
+                    <h4 class="font-semibold text-xl mb-4" style="color: var(--accent-blue);">Support</h4>
+                    <p class="text-text-secondary flex items-center">
+                        <i class="fas fa-envelope mr-3" style="color: var(--accent-magenta);"></i>
+                        support@esummit2025.com
+                    </p>
+                    <p class="text-text-secondary flex items-center">
+                        <i class="fas fa-phone mr-3" style="color: var(--accent-cyan);"></i>
+                        +91 XXXXX XXXXX
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="border-t border-white/10 pt-8">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <p class="text-text-muted mb-4 md:mb-0 text-center md:text-left">
+                    © 2025 E-Cell, SIT. All rights reserved. Built with <i
+                        class="fas fa-heart mx-1" style="color: var(--accent-magenta);"></i> by E-Cell SIT Web Team
+                </p>
+                <div class="flex space-x-8">
+                    <a href="#" class="text-text-muted transition-colors" style="--hover-color: var(--purple-neon);" onmouseover="this.style.color='var(--hover-color)'" onmouseout="this.style.color=''">Privacy Policy</a>
+                    <a href="#" class="text-text-muted transition-colors" style="--hover-color: var(--accent-blue);" onmouseover="this.style.color='var(--hover-color)'" onmouseout="this.style.color=''">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    </footer>
+
+    <script src="assets/js/dark-theme.js"></script>
+    <script src="assets/js/cinematic-galaxy.js"></script>
+    
+    <script>
+        // Disable custom cursor and mouse trails
+        document.body.style.cursor = 'default';
+        const customCursor = document.getElementById('customCursor');
+        if (customCursor) {
+            customCursor.style.display = 'none';
+        }
+        
+        // Log galaxy integration
+        console.log('🌌 Cinematic Galaxy Animation Active on Homepage');
+        console.log('💙 Cosmic Blue Glow Theme');
+        console.log('🎨 Colors: Electric Blue (#1E90FF) + Neon Cyan (#00FFFF)');
+        console.log('🖱️ Mouse Parallax: DISABLED');
+    </script>
+</body>
+
+</html>

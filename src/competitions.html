@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Competitions | E-Summit 2025</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        'dark-primary': '#0A0A0F',
+                        'dark-secondary': '#1A0D2E',
+                        'dark-tertiary': '#2D1B3D',
+                        'dark-card': '#1E0A33',
+                        'accent-blue': '#1E90FF',
+                        'accent-emerald': '#48CAE4',
+                        'accent-gold': '#E0AAFF',
+                        'accent-violet': '#5A189A',
+                        'accent-pink': '#9D4EDD',
+                        'accent-cyan': '#4FC3F7',
+                        'text-primary': '#F5F9FF',
+                        'text-secondary': '#C8D3F0',
+                        'text-muted': '#8B9DC3'
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/dark-theme.css">
+    <style>
+        body {
+            opacity: 0;
+            animation: fadeIn 0.8s ease-in forwards;
+        }
+
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+            }
+        }
+
+        .mobile-menu {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+        }
+
+        .mobile-menu.active {
+            max-height: 500px;
+        }
+    </style>
+</head>
+
+<body class="dark">
+
+    <!-- Navigation -->
+    <nav id="navbar" class="navbar-dark fixed top-0 left-0 right-0 z-50 transition-all duration-300">
+        <div class="container mx-auto px-4 py-4">
+            <div class="flex justify-between items-center">
+                <div class="flex items-center space-x-3">
+                    <div
+                        class="logo-glass w-12 h-12 rounded-xl flex items-center justify-center text-white font-bold text-lg">
+                        E</div>
+                    <span class="navbar-brand text-2xl font-bold">E-Summit 2025</span>
+                </div>
+                <div class="hidden md:flex space-x-2">
+                    <a href="index.html" class="nav-link">Home</a>
+                    <a href="about.html" class="nav-link">About</a>
+                    <a href="schedule.html" class="nav-link">Schedule</a>
+                    <a href="competitions.html" class="nav-link active">Events</a>
+                    <a href="contact.html" class="nav-link">Contact</a>
+                </div>
+                <div class="hidden md:block">
+                    <a href="contact.html#register" class="btn-primary">
+                        <i class="fas fa-rocket"></i>
+                        Register Now
+                    </a>
+                </div>
+                <button id="mobile-menu-button" class="md:hidden text-text-primary text-2xl">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+            <div id="mobile-menu" class="mobile-menu md:hidden mt-4 glass rounded-2xl p-4">
+                <div class="flex flex-col space-y-3">
+                    <a href="index.html" class="nav-link">Home</a>
+                    <a href="about.html" class="nav-link">About</a>
+                    <a href="schedule.html" class="nav-link">Schedule</a>
+                    <a href="competitions.html" class="nav-link active">Events</a>
+                    <a href="contact.html" class="nav-link">Contact</a>
+                    <a href="contact.html#register" class="btn-primary text-center">
+                        <i class="fas fa-rocket"></i>
+                        Register Now
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Banner -->
+    <section class="hero-dark min-h-[60vh] flex items-center justify-center pt-20 relative overflow-hidden">
+        <div class="particles-dark">
+            <div class="particle-dark"
+                style="left: 25%; animation-delay: 0s; width: 4px; height: 4px; background: #5A189A;"></div>
+            <div class="particle-dark"
+                style="left: 45%; animation-delay: 1s; width: 6px; height: 6px; background: #9D4EDD;"></div>
+            <div class="particle-dark"
+                style="left: 65%; animation-delay: 2s; width: 3px; height: 3px; background: #E0AAFF;"></div>
+            <div class="particle-dark"
+                style="left: 85%; animation-delay: 0.5s; width: 5px; height: 5px; background: #48CAE4;"></div>
+        </div>
+        <div class="container mx-auto px-4 text-center hero-content relative z-10">
+            <h1 class="text-6xl md:text-7xl font-bold mb-6 gradient-text">Competitions</h1>
+            <p class="text-2xl md:text-3xl font-light text-accent-violet">Test Your Skills & Win Big</p>
+        </div>
+    </section>
+
+    <!-- Competitions Content -->
+    <section class="py-20 bg-dark-secondary">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16 fade-in-up">
+                <p class="text-xl text-text-secondary max-w-4xl mx-auto leading-relaxed">Participate in exciting
+                    competitions designed to test your strategic thinking, teamwork, and quick decision-making skills
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-12 max-w-7xl mx-auto">
+                <!-- IPL Auction -->
+                <div class="glass-card p-12 fade-in-up bg-gradient-to-br from-accent-violet/10 to-accent-pink/10">
+                    <div class="text-center mb-10">
+                        <div
+                            class="w-28 h-28 bg-gradient-to-br from-accent-violet to-accent-pink rounded-3xl flex items-center justify-center text-white text-6xl mb-8 mx-auto shadow-2xl">
+                            <i class="fas fa-gavel icon-glow"></i>
+                        </div>
+                        <h2 class="text-4xl font-bold text-text-primary mb-4">IPL Auction</h2>
+                        <span
+                            class="bg-gradient-to-r from-accent-violet to-accent-pink text-white px-6 py-3 rounded-full text-sm font-semibold shadow-lg">Strategic
+                            Competition</span>
+                    </div>
+
+                    <p class="text-text-secondary mb-8 text-lg leading-relaxed text-center">
+                        Experience the thrill of an IPL-style auction where strategic bidding and team building skills
+                        are put to the test. Build your dream team within budget constraints and compete for victory!
+                    </p>
+
+                    <div class="space-y-6 mb-10">
+                        <h3 class="font-bold text-text-primary text-xl">Competition Details:</h3>
+                        <div class="flex items-start text-text-secondary">
+                            <i class="fas fa-users text-accent-violet mr-4 mt-1 text-xl"></i>
+                            <span class="text-lg"><strong class="text-text-primary">Team Event:</strong> 3-5 members per
+                                team</span>
+                        </div>
+                        <div class="flex items-start text-text-secondary">
+                            <i class="fas fa-trophy text-accent-pink mr-4 mt-1 text-xl"></i>
+                            <span class="text-lg"><strong class="text-text-primary">Prizes:</strong> Exciting prizes for
+                                winners</span>
+                        </div>
+                        <div class="flex items-start text-text-secondary">
+                            <i class="fas fa-clock text-accent-gold mr-4 mt-1 text-xl"></i>
+                            <span class="text-lg"><strong class="text-text-primary">Duration:</strong> 3-4 hours</span>
+                        </div>
+                        <div class="flex items-start text-text-secondary">
+                            <i class="fas fa-lightbulb text-accent-emerald mr-4 mt-1 text-xl"></i>
+                            <span class="text-lg"><strong class="text-text-primary">Skills:</strong> Strategy,
+                                Budgeting, Team Management</span>
+                        </div>
+                    </div>
+
+                    <a href="https://forms.google.com" target="_blank"
+                        class="btn-primary w-full text-center text-xl py-4">
+                        <i class="fas fa-user-plus"></i>
+                        Register for IPL Auction
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+
+                <!-- Squid Game -->
+                <div class="glass-card p-12 fade-in-up bg-gradient-to-br from-accent-emerald/10 to-accent-gold/10">
+                    <div class="text-center mb-10">
+                        <div
+                            class="w-28 h-28 bg-gradient-to-br from-accent-emerald to-accent-gold rounded-3xl flex items-center justify-center text-white text-6xl mb-8 mx-auto shadow-2xl">
+                            <i class="fas fa-gamepad icon-glow"></i>
+                        </div>
+                        <h2 class="text-4xl font-bold text-text-primary mb-4">Squid Game</h2>
+                        <span
+                            class="bg-gradient-to-r from-accent-emerald to-accent-gold text-white px-6 py-3 rounded-full text-sm font-semibold shadow-lg">Challenge
+                            Event</span>
+                    </div>
+
+                    <p class="text-text-secondary mb-8 text-lg leading-relaxed text-center">
+                        Inspired by the hit series, participate in a series of fun and challenging games that test your
+                        quick thinking, strategy, and teamwork. Navigate through multiple rounds to emerge victorious!
+                    </p>
+
+                    <div class="space-y-6 mb-10">
+                        <h3 class="font-bold text-text-primary text-xl">Competition Details:</h3>
+                        <div class="flex items-start text-text-secondary">
+                            <i class="fas fa-user text-accent-emerald mr-4 mt-1 text-xl"></i>
+                            <span class="text-lg"><strong class="text-text-primary">Format:</strong> Individual & Team
+                                Rounds</span>
+                        </div>
+                        <div class="flex items-start text-text-secondary">
+                            <i class="fas fa-trophy text-accent-gold mr-4 mt-1 text-xl"></i>
+                            <span class="text-lg"><strong class="text-text-primary">Prizes:</strong> Amazing prizes and
+                                goodies</span>
+                        </div>
+                        <div class="flex items-start text-text-secondary">
+                            <i class="fas fa-clock text-accent-blue mr-4 mt-1 text-xl"></i>
+                            <span class="text-lg"><strong class="text-text-primary">Duration:</strong> 2-3 hours</span>
+                        </div>
+                        <div class="flex items-start text-text-secondary">
+                            <i class="fas fa-lightbulb text-accent-violet mr-4 mt-1 text-xl"></i>
+                            <span class="text-lg"><strong class="text-text-primary">Skills:</strong> Quick Thinking,
+                                Teamwork, Adaptability</span>
+                        </div>
+                    </div>
+
+                    <a href="https://forms.google.com" target="_blank"
+                        class="btn-secondary w-full text-center text-xl py-4">
+                        <i class="fas fa-gamepad"></i>
+                        Register for Squid Game
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Why Participate Section -->
+            <div class="mt-20 max-w-5xl mx-auto fade-in-up">
+                <h2 class="text-4xl font-bold gradient-text mb-12 text-center">Why Participate?</h2>
+                <div class="grid md:grid-cols-3 gap-8">
+                    <div class="glass-card text-center p-8">
+                        <i class="fas fa-medal text-5xl text-accent-gold mb-6 icon-glow"></i>
+                        <h3 class="font-bold text-text-primary mb-4 text-xl">Win Prizes</h3>
+                        <p class="text-text-secondary leading-relaxed">Exciting prizes for winners and runners-up</p>
+                    </div>
+                    <div class="glass-card text-center p-8">
+                        <i class="fas fa-certificate text-5xl text-accent-blue mb-6 icon-glow"></i>
+                        <h3 class="font-bold text-text-primary mb-4 text-xl">Get Recognition</h3>
+                        <p class="text-text-secondary leading-relaxed">Certificates and recognition for all participants
+                        </p>
+                    </div>
+                    <div class="glass-card text-center p-8">
+                        <i class="fas fa-users-cog text-5xl text-accent-emerald mb-6 icon-glow"></i>
+                        <h3 class="font-bold text-text-primary mb-4 text-xl">Build Skills</h3>
+                        <p class="text-text-secondary leading-relaxed">Enhance your strategic and teamwork abilities</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Competition Guidelines Section -->
+    <section class="py-20 bg-dark-primary">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16 fade-in-up">
+                <h2 class="text-5xl md:text-6xl font-bold gradient-text-secondary mb-6">Competition Guidelines</h2>
+                <div class="w-32 h-1 bg-gradient-to-r from-accent-violet to-accent-pink mx-auto mb-8 rounded-full">
+                </div>
+                <p class="text-xl text-text-secondary max-w-4xl mx-auto leading-relaxed">Important rules and guidelines
+                    to ensure fair play and maximum enjoyment for all participants</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-12 max-w-6xl mx-auto">
+                <!-- General Rules -->
+                <div class="glass-card p-10 fade-in-up">
+                    <div class="flex items-center mb-8">
+                        <div
+                            class="w-16 h-16 bg-gradient-to-br from-accent-blue to-accent-violet rounded-2xl flex items-center justify-center text-white text-3xl mr-6 shadow-lg">
+                            <i class="fas fa-clipboard-list icon-glow"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-text-primary">General Rules</h3>
+                    </div>
+                    <ul class="space-y-4 text-text-secondary">
+                        <li class="flex items-start"><i class="fas fa-check text-accent-blue mr-3 mt-1"></i>All
+                            participants must register before the deadline</li>
+                        <li class="flex items-start"><i class="fas fa-check text-accent-blue mr-3 mt-1"></i>Valid
+                            student ID required for verification</li>
+                        <li class="flex items-start"><i class="fas fa-check text-accent-blue mr-3 mt-1"></i>Teams must
+                            arrive 30 minutes before start time</li>
+                        <li class="flex items-start"><i class="fas fa-check text-accent-blue mr-3 mt-1"></i>Mobile
+                            phones must be kept on silent mode</li>
+                        <li class="flex items-start"><i class="fas fa-check text-accent-blue mr-3 mt-1"></i>Decisions of
+                            judges and organizers are final</li>
+                    </ul>
+                </div>
+
+                <!-- Prizes & Recognition -->
+                <div class="glass-card p-10 fade-in-up">
+                    <div class="flex items-center mb-8">
+                        <div
+                            class="w-16 h-16 bg-gradient-to-br from-accent-gold to-accent-emerald rounded-2xl flex items-center justify-center text-white text-3xl mr-6 shadow-lg">
+                            <i class="fas fa-trophy icon-glow"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-text-primary">Prizes & Recognition</h3>
+                    </div>
+                    <ul class="space-y-4 text-text-secondary">
+                        <li class="flex items-start"><i class="fas fa-star text-accent-gold mr-3 mt-1"></i>Cash prizes
+                            for top 3 teams in each competition</li>
+                        <li class="flex items-start"><i class="fas fa-star text-accent-gold mr-3 mt-1"></i>Certificates
+                            for all participants</li>
+                        <li class="flex items-start"><i class="fas fa-star text-accent-gold mr-3 mt-1"></i>Special
+                            recognition for innovative approaches</li>
+                        <li class="flex items-start"><i class="fas fa-star text-accent-gold mr-3 mt-1"></i>Networking
+                            opportunities with industry experts</li>
+                        <li class="flex items-start"><i class="fas fa-star text-accent-gold mr-3 mt-1"></i>Social media
+                            features for outstanding performances</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer-dark bg-dark-tertiary text-text-primary py-20">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-4 gap-12 mb-16">
+                <div class="md:col-span-2">
+                    <div class="flex items-center space-x-4 mb-6">
+                        <div
+                            class="w-16 h-16 bg-gradient-to-br from-accent-violet to-accent-pink rounded-2xl flex items-center justify-center text-white font-bold text-2xl shadow-lg">
+                            E
+                        </div>
+                        <h3 class="text-3xl font-bold gradient-text">E-Summit 2025</h3>
+                    </div>
+                    <p class="text-text-secondary mb-6 text-lg leading-relaxed">Organized by E-Cell, Saffrony Institute
+                        of Technology, Mehsana</p>
+                </div>
+
+                <div>
+                    <h3 class="text-2xl font-bold mb-6 gradient-text-secondary">Quick Links</h3>
+                    <div class="space-y-4">
+                        <a href="index.html"
+                            class="block text-text-secondary hover:text-accent-blue transition-all duration-300 transform hover:translate-x-2">
+                            <i class="fas fa-home mr-3"></i>Home
+                        </a>
+                        <a href="about.html"
+                            class="block text-text-secondary hover:text-accent-emerald transition-all duration-300 transform hover:translate-x-2">
+                            <i class="fas fa-info-circle mr-3"></i>About
+                        </a>
+                        <a href="schedule.html"
+                            class="block text-text-secondary hover:text-accent-gold transition-all duration-300 transform hover:translate-x-2">
+                            <i class="fas fa-calendar-alt mr-3"></i>Schedule
+                        </a>
+                        <a href="competitions.html" class="block text-accent-violet font-semibold">
+                            <i class="fas fa-trophy mr-3"></i>Events
+                        </a>
+                        <a href="contact.html"
+                            class="block text-text-secondary hover:text-accent-pink transition-all duration-300 transform hover:translate-x-2">
+                            <i class="fas fa-envelope mr-3"></i>Contact
+                        </a>
+                    </div>
+                </div>
+
+                <div>
+                    <h3 class="text-2xl font-bold mb-6 gradient-text">Connect With Us</h3>
+                    <div class="flex space-x-4 mb-8">
+                        <a href="#"
+                            class="w-14 h-14 bg-gradient-to-br from-accent-pink to-accent-violet rounded-2xl flex items-center justify-center hover:scale-110 transition-all duration-300 shadow-lg">
+                            <i class="fab fa-instagram text-xl"></i>
+                        </a>
+                        <a href="#"
+                            class="w-14 h-14 bg-gradient-to-br from-accent-blue to-accent-emerald rounded-2xl flex items-center justify-center hover:scale-110 transition-all duration-300 shadow-lg">
+                            <i class="fab fa-linkedin text-xl"></i>
+                        </a>
+                        <a href="#"
+                            class="w-14 h-14 bg-gradient-to-br from-accent-emerald to-accent-gold rounded-2xl flex items-center justify-center hover:scale-110 transition-all duration-300 shadow-lg">
+                            <i class="fab fa-facebook text-xl"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="border-t border-white/10 pt-8">
+                <div class="flex flex-col md:flex-row justify-between items-center">
+                    <p class="text-text-muted mb-4 md:mb-0 text-center md:text-left">
+                        © 2025 E-Cell, SIT. All rights reserved. Built with <i
+                            class="fas fa-heart text-accent-pink mx-1"></i> by E-Cell SIT Web Team
+                    </p>
+                    <div class="flex space-x-8">
+                        <a href="#" class="text-text-muted hover:text-accent-blue transition-colors">Privacy Policy</a>
+                        <a href="#" class="text-text-muted hover:text-accent-emerald transition-colors">Terms of
+                            Service</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="assets/js/dark-theme.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="E-Summit 2025 - Entrepreneurship summit by E-Cell SIT featuring workshops, competitions, and speaker sessions">
+    <title>E-Summit 2025 | E-Cell SIT Mehsana</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * { font-family: 'Poppins', sans-serif; }
+        html { scroll-behavior: smooth; }
+        @keyframes fadeInUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+        .animate-fadeInUp { animation: fadeInUp 0.8s ease-out; }
+        .gradient-bg { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); }
+        .gradient-bg-2 { background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%); }
+        .gradient-bg-3 { background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%); }
+        .hover-lift { transition: transform 0.3s ease, box-shadow 0.3s ease; }
+        .hover-lift:hover { transform: translateY(-10px); box-shadow: 0 20px 40px rgba(0,0,0,0.2); }
+        .mobile-menu { max-height: 0; overflow: hidden; transition: max-height 0.3s ease-out; }
+        .mobile-menu.active { max-height: 500px; }
+        .scroll-reveal { opacity: 0; transform: translateY(50px); transition: opacity 0.6s ease, transform 0.6s ease; }
+        .scroll-reveal.active { opacity: 1; transform: translateY(0); }
+    </style>
+</head>
+<body class="bg-gray-50">
+    
+    <!-- Navigation -->
+    <nav id="navbar" class="fixed top-0 left-0 right-0 bg-white shadow-md z-50 transition-all duration-300">
+        <div class="container mx-auto px-4 py-4">
+            <div class="flex justify-between items-center">
+                <div class="flex items-center space-x-2">
+                    <div class="w-10 h-10 gradient-bg rounded-lg flex items-center justify-center text-white font-bold">E</div>
+                    <span class="text-xl font-bold text-gray-800">E-Summit 2025</span>
+                </div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="#home" class="nav-link text-gray-600 hover:text-purple-600 font-medium">Home</a>
+                    <a href="#about" class="nav-link text-gray-600 hover:text-purple-600 font-medium">About</a>
+                    <a href="#schedule" class="nav-link text-gray-600 hover:text-purple-600 font-medium">Schedule</a>
+                    <a href="#competitions" class="nav-link text-gray-600 hover:text-purple-600 font-medium">Events</a>
+                    <a href="#speakers" class="nav-link text-gray-600 hover:text-purple-600 font-medium">Speakers</a>
+                    <a href="#contact" class="nav-link text-gray-600 hover:text-purple-600 font-medium">Contact</a>
+                </div>
+                <div class="hidden md:block">
+                    <a href="#registration" class="bg-purple-600 text-white px-6 py-2 rounded-full font-semibold hover:bg-purple-700">Register Now</a>
+                </div>
+                <button id="mobile-menu-button" class="md:hidden text-gray-600"><i class="fas fa-bars text-2xl"></i></button>
+            </div>
+            <div id="mobile-menu" class="mobile-menu md:hidden mt-4">
+                <div class="flex flex-col space-y-4">
+                    <a href="#home" class="mobile-nav-link text-gray-600 hover:text-purple-600 font-medium">Home</a>
+                    <a href="#about" class="mobile-nav-link text-gray-600 hover:text-purple-600 font-medium">About</a>
+                    <a href="#schedule" class="mobile-nav-link text-gray-600 hover:text-purple-600 font-medium">Schedule</a>
+                    <a href="#competitions" class="mobile-nav-link text-gray-600 hover:text-purple-600 font-medium">Events</a>
+                    <a href="#speakers" class="mobile-nav-link text-gray-600 hover:text-purple-600 font-medium">Speakers</a>
+                    <a href="#contact" class="mobile-nav-link text-gray-600 hover:text-purple-600 font-medium">Contact</a>
+                    <a href="#registration" class="bg-purple-600 text-white px-6 py-2 rounded-full font-semibold text-center">Register Now</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+    
+    <!-- Hero Section -->
+    <section id="home" class="min-h-screen flex items-center justify-center gradient-bg pt-20">
+        <div class="container mx-auto px-4 py-20">
+            <div class="text-center text-white animate-fadeInUp">
+                <div class="inline-block mb-6">
+                    <span class="bg-white/20 backdrop-blur-sm px-6 py-2 rounded-full text-sm font-semibold">E-Cell, SIT Mehsana Presents</span>
+                </div>
+                <h1 class="text-5xl md:text-7xl font-bold mb-6 leading-tight">E-Summit 2025</h1>
+                <p class="text-xl md:text-2xl mb-4 font-light">Igniting Innovation, Inspiring Entrepreneurship</p>
+                <div class="flex flex-col md:flex-row items-center justify-center space-y-4 md:space-y-0 md:space-x-8 mb-8 text-lg">
+                    <div class="flex items-center space-x-2"><i class="fas fa-calendar-alt"></i><span>6th & 7th November 2025</span></div>
+                    <div class="flex items-center space-x-2"><i class="fas fa-map-marker-alt"></i><span>SIT Mehsana, Gujarat</span></div>
+                </div>
+                <p class="text-lg md:text-xl mb-10 max-w-3xl mx-auto font-light opacity-90">Join us for two days of inspiring workshops, engaging competitions, and insightful speaker sessions.</p>
+                <div class="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-4">
+                    <a href="#registration" class="bg-white text-purple-600 px-8 py-4 rounded-full font-bold text-lg hover:bg-gray-100 shadow-lg">Register Now <i class="fas fa-arrow-right ml-2"></i></a>
+                    <a href="#about" class="bg-transparent border-2 border-white text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-white/10">Learn More</a>
+                </div>
+                <div id="countdown" class="mt-16 flex justify-center space-x-4 md:space-x-8">
+                    <div class="text-center"><div id="days" class="text-4xl md:text-5xl font-bold">00</div><div class="text-sm opacity-80">Days</div></div>
+                    <div class="text-center"><div id="hours" class="text-4xl md:text-5xl font-bold">00</div><div class="text-sm opacity-80">Hours</div></div>
+                    <div class="text-center"><div id="minutes" class="text-4xl md:text-5xl font-bold">00</div><div class="text-sm opacity-80">Minutes</div></div>
+                    <div class="text-center"><div id="seconds" class="text-4xl md:text-5xl font-bold">00</div><div class="text-sm opacity-80">Seconds</div></div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16 scroll-reveal">
+                <h2 class="text-4xl md:text-5xl font-bold text-gray-800 mb-4">About E-Summit 2025</h2>
+                <div class="w-24 h-1 gradient-bg mx-auto mb-6"></div>
+                <p class="text-lg text-gray-600 max-w-3xl mx-auto">An annual entrepreneurship summit bringing together aspiring entrepreneurs, industry leaders, and innovators</p>
+            </div>
+            <div class="grid md:grid-cols-2 gap-12 items-center mb-16">
+                <div class="scroll-reveal">
+                    <h3 class="text-3xl font-bold text-gray-800 mb-6">Why E-Summit?</h3>
+                    <p class="text-gray-600 mb-4 leading-relaxed">E-Summit 2025 is a movement to foster entrepreneurial culture and innovation. Organized by E-Cell SIT, this summit bridges the gap between aspiring entrepreneurs and the startup ecosystem.</p>
+                    <p class="text-gray-600 mb-6 leading-relaxed">From hands-on workshops to thrilling competitions, we offer experiences that inspire, educate, and empower.</p>
+                    <div class="grid grid-cols-2 gap-6">
+                        <div class="text-center p-4 bg-purple-50 rounded-lg"><div class="text-4xl font-bold text-purple-600 mb-2">500+</div><div class="text-sm text-gray-600">Expected Participants</div></div>
+                        <div class="text-center p-4 bg-purple-50 rounded-lg"><div class="text-4xl font-bold text-purple-600 mb-2">2</div><div class="text-sm text-gray-600">Days of Innovation</div></div>
+                    </div>
+                </div>
+                <div class="scroll-reveal">
+                    <div class="bg-gradient-to-br from-purple-100 to-pink-100 rounded-2xl p-8 h-96 flex items-center justify-center">
+                        <div class="text-center"><i class="fas fa-lightbulb text-8xl text-purple-500 mb-4"></i><p class="text-2xl font-bold text-gray-700">Innovation Awaits</p></div>
+                    </div>
+                </div>
+            </div>
+            <div class="scroll-reveal">
+                <h3 class="text-3xl font-bold text-gray-800 mb-8 text-center">Our Objectives</h3>
+                <div class="grid md:grid-cols-3 gap-8">
+                    <div class="bg-white p-8 rounded-xl shadow-lg hover-lift border border-gray-100">
+                        <div class="w-16 h-16 gradient-bg rounded-full flex items-center justify-center text-white text-3xl mb-6 mx-auto"><i class="fas fa-rocket"></i></div>
+                        <h4 class="text-xl font-bold text-gray-800 mb-4 text-center">Foster Innovation</h4>
+                        <p class="text-gray-600 text-center">Encourage creative thinking and problem-solving through entrepreneurial ventures</p>
+                    </div>
+                    <div class="bg-white p-8 rounded-xl shadow-lg hover-lift border border-gray-100">
+                        <div class="w-16 h-16 gradient-bg-2 rounded-full flex items-center justify-center text-white text-3xl mb-6 mx-auto"><i class="fas fa-users"></i></div>
+                        <h4 class="text-xl font-bold text-gray-800 mb-4 text-center">Build Network</h4>
+                        <p class="text-gray-600 text-center">Connect with mentors and industry experts to build professional relationships</p>
+                    </div>
+                    <div class="bg-white p-8 rounded-xl shadow-lg hover-lift border border-gray-100">
+                        <div class="w-16 h-16 gradient-bg-3 rounded-full flex items-center justify-center text-white text-3xl mb-6 mx-auto"><i class="fas fa-graduation-cap"></i></div>
+                        <h4 class="text-xl font-bold text-gray-800 mb-4 text-center">Learn & Grow</h4>
+                        <p class="text-gray-600 text-center">Gain practical knowledge from workshops and speaker sessions</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Schedule Section -->
+    <section id="schedule" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16 scroll-reveal">
+                <h2 class="text-4xl md:text-5xl font-bold text-gray-800 mb-4">Event Schedule</h2>
+                <div class="w-24 h-1 gradient-bg mx-auto mb-6"></div>
+                <p class="text-lg text-gray-600 max-w-3xl mx-auto">Two action-packed days</p>
+            </div>
+            <div class="flex justify-center mb-12 scroll-reveal">
+                <div class="inline-flex bg-white rounded-full shadow-lg p-2">
+                    <button class="day-tab px-8 py-3 rounded-full font-semibold transition" data-day="day1">Day 1 - Nov 6th</button>
+                    <button class="day-tab px-8 py-3 rounded-full font-semibold transition" data-day="day2">Day 2 - Nov 7th</button>
+                </div>
+            </div>
+            <div id="day1-schedule" class="schedule-content max-w-4xl mx-auto">
+                <div class="bg-white p-6 rounded-xl shadow-lg mb-4 scroll-reveal">
+                    <span class="text-purple-600 font-bold">10:30 AM - 5:00 PM</span>
+                    <h4 class="text-xl font-bold text-gray-800 mt-2">Illuminate Workshop by E-Cell IIT Bombay</h4>
+                </div>
+            </div>
+            <div id="day2-schedule" class="schedule-content max-w-4xl mx-auto hidden">
+                <div class="bg-white p-6 rounded-xl shadow-lg mb-4 scroll-reveal">
+                    <span class="text-purple-600 font-bold">9:30 AM - 11:30 AM</span>
+                    <h4 class="text-xl font-bold text-gray-800 mt-2">Guest Speaker Sessions</h4>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-lg scroll-reveal">
+                    <span class="text-purple-600 font-bold">12:00 PM - 5:00 PM</span>
+                    <h4 class="text-xl font-bold text-gray-800 mt-2">Competitions: IPL Auction & Squid Game</h4>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Competitions Section -->
+    <section id="competitions" class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16 scroll-reveal">
+                <h2 class="text-4xl md:text-5xl font-bold text-gray-800 mb-4">Competitions</h2>
+                <div class="w-24 h-1 gradient-bg mx-auto mb-6"></div>
+            </div>
+            <div class="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+                <div class="competition-card bg-gradient-to-br from-purple-50 to-pink-50 rounded-2xl p-8 shadow-xl hover-lift scroll-reveal">
+                    <div class="text-center mb-6">
+                        <div class="w-20 h-20 gradient-bg rounded-full flex items-center justify-center text-white text-4xl mb-4 mx-auto"><i class="fas fa-gavel"></i></div>
+                        <h3 class="text-3xl font-bold text-gray-800 mb-2">IPL Auction</h3>
+                    </div>
+                    <p class="text-gray-700 mb-6">Strategic bidding and team building competition. Build your dream team!</p>
+                    <a href="https://forms.google.com" target="_blank" class="block w-full bg-purple-600 text-white text-center py-3 rounded-full font-bold hover:bg-purple-700">Register <i class="fas fa-arrow-right ml-2"></i></a>
+                </div>
+                <div class="competition-card bg-gradient-to-br from-blue-50 to-cyan-50 rounded-2xl p-8 shadow-xl hover-lift scroll-reveal">
+                    <div class="text-center mb-6">
+                        <div class="w-20 h-20 gradient-bg-3 rounded-full flex items-center justify-center text-white text-4xl mb-4 mx-auto"><i class="fas fa-gamepad"></i></div>
+                        <h3 class="text-3xl font-bold text-gray-800 mb-2">Squid Game</h3>
+                    </div>
+                    <p class="text-gray-700 mb-6">Fun challenges testing quick thinking and strategy. Multiple rounds to victory!</p>
+                    <a href="https://forms.google.com" target="_blank" class="block w-full bg-blue-600 text-white text-center py-3 rounded-full font-bold hover:bg-blue-700">Register <i class="fas fa-arrow-right ml-2"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Speakers Section -->
+    <section id="speakers" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16 scroll-reveal">
+                <h2 class="text-4xl md:text-5xl font-bold text-gray-800 mb-4">Guest Speakers</h2>
+                <div class="w-24 h-1 gradient-bg mx-auto mb-6"></div>
+            </div>
+            <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                <div class="bg-white rounded-2xl overflow-hidden shadow-xl hover-lift scroll-reveal">
+                    <div class="h-64 bg-gradient-to-br from-purple-200 to-pink-200 flex items-center justify-center"><i class="fas fa-user-circle text-8xl text-purple-400"></i></div>
+                    <div class="p-6"><h4 class="text-xl font-bold text-gray-800 mb-2">Speaker 1</h4><p class="text-purple-600 font-semibold mb-3">Founder & CEO</p><p class="text-gray-600 text-sm">Building successful startups</p></div>
+                </div>
+                <div class="bg-white rounded-2xl overflow-hidden shadow-xl hover-lift scroll-reveal">
+                    <div class="h-64 bg-gradient-to-br from-blue-200 to-cyan-200 flex items-center justify-center"><i class="fas fa-user-circle text-8xl text-blue-400"></i></div>
+                    <div class="p-6"><h4 class="text-xl font-bold text-gray-800 mb-2">Speaker 2</h4><p class="text-purple-600 font-semibold mb-3">Serial Entrepreneur</p><p class="text-gray-600 text-sm">Raising funding insights</p></div>
+                </div>
+                <div class="bg-white rounded-2xl overflow-hidden shadow-xl hover-lift scroll-reveal">
+                    <div class="h-64 bg-gradient-to-br from-pink-200 to-red-200 flex items-center justify-center"><i class="fas fa-user-circle text-8xl text-pink-400"></i></div>
+                    <div class="p-6"><h4 class="text-xl font-bold text-gray-800 mb-2">Speaker 3</h4><p class="text-purple-600 font-semibold mb-3">Innovation Expert</p><p class="text-gray-600 text-sm">Future of tech entrepreneurship</p></div>
+                </div>
+            </div>
+            <p class="text-center mt-12 text-gray-500 italic scroll-reveal">More speakers to be announced soon!</p>
+        </div>
+    </section>
+
+    <!-- Registration Section -->
+    <section id="registration" class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="max-w-4xl mx-auto text-center scroll-reveal">
+                <h2 class="text-4xl md:text-5xl font-bold text-gray-800 mb-4">Register Now</h2>
+                <div class="w-24 h-1 gradient-bg mx-auto mb-8"></div>
+                <div class="bg-gradient-to-br from-purple-50 to-pink-50 rounded-3xl p-12 shadow-2xl">
+                    <i class="fas fa-ticket-alt text-6xl text-purple-600 mb-4"></i>
+                    <h3 class="text-3xl font-bold text-gray-800 mb-4">Secure Your Spot</h3>
+                    <p class="text-lg text-gray-600 mb-8">Don't miss the biggest entrepreneurship event of the year!</p>
+                    <a href="https://forms.google.com" target="_blank" class="inline-block bg-purple-600 text-white px-12 py-5 rounded-full font-bold text-xl hover:bg-purple-700 shadow-lg"><i class="fas fa-user-plus mr-2"></i> Register - It's Free!</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact & Footer -->
+    <section id="contact" class="py-20 bg-gray-900 text-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16 scroll-reveal">
+                <h2 class="text-4xl md:text-5xl font-bold mb-4">Get In Touch</h2>
+                <div class="w-24 h-1 gradient-bg mx-auto mb-6"></div>
+            </div>
+            <div class="grid md:grid-cols-2 gap-12 max-w-6xl mx-auto mb-16">
+                <div class="scroll-reveal">
+                    <h3 class="text-2xl font-bold mb-6">Contact Information</h3>
+                    <div class="space-y-6">
+                        <div class="flex items-start">
+                            <div class="w-12 h-12 gradient-bg rounded-lg flex items-center justify-center mr-4"><i class="fas fa-envelope"></i></div>
+                            <div><h4 class="font-semibold mb-1">Email</h4><a href="mailto:ecell@sit.edu" class="text-gray-400 hover:text-purple-400">ecell@sit.edu</a></div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="w-12 h-12 gradient-bg rounded-lg flex items-center justify-center mr-4"><i class="fas fa-map-marker-alt"></i></div>
+                            <div><h4 class="font-semibold mb-1">Address</h4><p class="text-gray-400">SIT Mehsana, Gujarat</p></div>
+                        </div>
+                        <div class="pt-6">
+                            <h4 class="font-semibold mb-4">Follow Us</h4>
+                            <div class="flex space-x-4">
+                                <a href="#" class="w-12 h-12 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-purple-600"><i class="fab fa-instagram"></i></a>
+                                <a href="#" class="w-12 h-12 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-purple-600"><i class="fab fa-linkedin"></i></a>
+                                <a href="#" class="w-12 h-12 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-purple-600"><i class="fab fa-facebook"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="scroll-reveal">
+                    <h3 class="text-2xl font-bold mb-6">Location</h3>
+                    <div class="bg-gray-800 rounded-xl h-96 flex items-center justify-center"><i class="fas fa-map-marked-alt text-6xl text-gray-600"></i></div>
+                </div>
+            </div>
+        </div>
+        <div class="border-t border-gray-800 pt-8">
+            <div class="container mx-auto px-4 text-center">
+                <p class="text-gray-400 text-sm">© 2025 E-Cell, SIT. All rights reserved. Built with <i class="fas fa-heart text-red-500"></i> by E-Cell SIT Web Team</p>
+            </div>
+        </div>
+    </section>
+    
+    <script src="assets/js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Schedule | E-Summit 2025</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        'dark-primary': '#0A0A0F',
+                        'dark-secondary': '#1A0D2E',
+                        'dark-tertiary': '#2D1B3D',
+                        'dark-card': '#1E0A33',
+                        'accent-blue': '#1E90FF',
+                        'accent-emerald': '#48CAE4',
+                        'accent-gold': '#E0AAFF',
+                        'accent-violet': '#5A189A',
+                        'accent-pink': '#9D4EDD',
+                        'accent-cyan': '#4FC3F7',
+                        'text-primary': '#F5F9FF',
+                        'text-secondary': '#C8D3F0',
+                        'text-muted': '#8B9DC3'
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/dark-theme.css">
+    <style>
+        body {
+            opacity: 0;
+            animation: fadeIn 0.8s ease-in forwards;
+        }
+
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+            }
+        }
+
+        .mobile-menu {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+        }
+
+        .mobile-menu.active {
+            max-height: 500px;
+        }
+
+        .day-tab {
+            transition: all 0.3s ease;
+        }
+
+        .schedule-content {
+            transition: opacity 0.3s ease;
+        }
+    </style>
+</head>
+<body class="dark">
+    
+    <!-- Navigation -->
+    <nav id="navbar" class="navbar-dark fixed top-0 left-0 right-0 z-50 transition-all duration-300">
+        <div class="container mx-auto px-4 py-4">
+            <div class="flex justify-between items-center">
+                <div class="flex items-center space-x-3">
+                    <div class="logo-glass w-12 h-12 rounded-xl flex items-center justify-center text-white font-bold text-lg">
+                        E</div>
+                    <span class="navbar-brand text-2xl font-bold">E-Summit 2025</span>
+                </div>
+                <div class="hidden md:flex space-x-2">
+                    <a href="index.html" class="nav-link">Home</a>
+                    <a href="about.html" class="nav-link">About</a>
+                    <a href="schedule.html" class="nav-link active">Schedule</a>
+                    <a href="competitions.html" class="nav-link">Events</a>
+                    <a href="contact.html" class="nav-link">Contact</a>
+                </div>
+                <div class="hidden md:block">
+                    <a href="contact.html#register" class="btn-primary">
+                        <i class="fas fa-rocket"></i>
+                        Register Now
+                    </a>
+                </div>
+                <button id="mobile-menu-button" class="md:hidden text-text-primary text-2xl">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+            <div id="mobile-menu" class="mobile-menu md:hidden mt-4 glass rounded-2xl p-4">
+                <div class="flex flex-col space-y-3">
+                    <a href="index.html" class="nav-link">Home</a>
+                    <a href="about.html" class="nav-link">About</a>
+                    <a href="schedule.html" class="nav-link active">Schedule</a>
+                    <a href="competitions.html" class="nav-link">Events</a>
+                    <a href="contact.html" class="nav-link">Contact</a>
+                    <a href="contact.html#register" class="btn-primary text-center">
+                        <i class="fas fa-rocket"></i>
+                        Register Now
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+    
+    <!-- Hero Banner -->
+    <section class="hero-dark min-h-[60vh] flex items-center justify-center pt-20 relative overflow-hidden">
+        <div class="particles-dark">
+            <div class="particle-dark" style="left: 20%; animation-delay: 0s; width: 4px; height: 4px; background: var(--accent-gold);"></div>
+            <div class="particle-dark" style="left: 40%; animation-delay: 1s; width: 6px; height: 6px; background: var(--accent-blue);"></div>
+            <div class="particle-dark" style="left: 60%; animation-delay: 2s; width: 3px; height: 3px; background: var(--accent-emerald);"></div>
+            <div class="particle-dark" style="left: 80%; animation-delay: 0.5s; width: 5px; height: 5px; background: var(--accent-violet);"></div>
+        </div>
+        <div class="container mx-auto px-4 text-center hero-content relative z-10">
+            <h1 class="text-6xl md:text-7xl font-bold mb-6 gradient-text">Event Schedule</h1>
+            <p class="text-2xl md:text-3xl font-light text-accent-gold">Two Action-Packed Days</p>
+        </div>
+    </section>
+
+    <!-- Schedule Content -->
+    <section class="py-20 bg-dark-secondary">
+        <div class="container mx-auto px-4">
+            <div class="flex justify-center mb-16">
+                <div class="glass rounded-full p-2">
+                    <button id="day1-tab" class="day-tab px-10 py-4 rounded-full font-semibold transition text-xl bg-gradient-to-r from-accent-blue to-accent-violet text-white shadow-lg">Day 1 - Nov 6th</button>
+                    <button id="day2-tab" class="day-tab px-10 py-4 rounded-full font-semibold transition text-xl text-text-secondary hover:text-text-primary">Day 2 - Nov 7th</button>
+                </div>
+            </div>
+            
+            <!-- Day 1 Schedule -->
+            <div id="day1-content" class="schedule-content max-w-5xl mx-auto">
+                <div class="space-y-8">
+                    <div class="glass-card p-8 border-l-4 border-accent-violet fade-in-up">
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="text-accent-violet font-bold text-xl">9:00 AM - 10:00 AM</span>
+                            <span class="bg-gradient-to-r from-accent-violet to-accent-pink px-4 py-2 rounded-full text-sm font-semibold text-white shadow-lg">Registration</span>
+                        </div>
+                        <h3 class="text-3xl font-bold text-text-primary mb-4">Registration & Welcome</h3>
+                        <p class="text-text-secondary text-lg leading-relaxed">Check-in, receive event kits, and network with fellow participants over refreshments</p>
+                    </div>
+                    
+                    <div class="glass-card p-8 border-l-4 border-accent-emerald fade-in-up">
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="text-accent-emerald font-bold text-xl">10:00 AM - 10:30 AM</span>
+                            <span class="bg-gradient-to-r from-accent-emerald to-accent-gold px-4 py-2 rounded-full text-sm font-semibold text-white shadow-lg">Opening</span>
+                        </div>
+                        <h3 class="text-3xl font-bold text-text-primary mb-4">Inaugural Ceremony</h3>
+                        <p class="text-text-secondary text-lg leading-relaxed">Opening address by E-Cell SIT team and chief guests, setting the tone for E-Summit 2025</p>
+                    </div>
+                    
+                    <div class="glass-card p-10 border-l-4 border-accent-gold fade-in-up bg-gradient-to-r from-accent-gold/10 to-accent-pink/10">
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="text-accent-gold font-bold text-xl">10:30 AM - 5:00 PM</span>
+                            <span class="bg-gradient-to-r from-accent-gold to-accent-pink px-4 py-2 rounded-full text-sm font-semibold text-white shadow-lg">Workshop</span>
+                        </div>
+                        <h3 class="text-3xl font-bold text-text-primary mb-4">Illuminate Workshop</h3>
+                        <p class="text-text-secondary mb-6 text-lg leading-relaxed">An exclusive hands-on workshop conducted by <strong class="text-accent-gold">E-Cell IIT Bombay</strong> focusing on entrepreneurship fundamentals, startup ideation, and business model development</p>
+                        <div class="flex items-center text-text-primary">
+                            <i class="fas fa-user-tie text-accent-gold mr-3 text-xl"></i>
+                            <span class="font-semibold">Facilitated by E-Cell IIT Bombay Team</span>
+                        </div>
+                    </div>
+                    
+                    <div class="glass-card p-8 border-l-4 border-accent-blue fade-in-up">
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="text-accent-blue font-bold text-xl">1:00 PM - 2:00 PM</span>
+                            <span class="bg-gradient-to-r from-accent-blue to-accent-emerald px-4 py-2 rounded-full text-sm font-semibold text-white shadow-lg">Break</span>
+                        </div>
+                        <h3 class="text-3xl font-bold text-text-primary mb-4">Lunch Break</h3>
+                        <p class="text-text-secondary text-lg leading-relaxed">Networking lunch with participants and speakers</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Day 2 Schedule -->
+            <div id="day2-content" class="schedule-content max-w-5xl mx-auto hidden">
+                <div class="space-y-8">
+                    <div class="glass-card p-8 border-l-4 border-accent-violet fade-in-up">
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="text-accent-violet font-bold text-xl">9:00 AM - 9:30 AM</span>
+                            <span class="bg-gradient-to-r from-accent-violet to-accent-pink px-4 py-2 rounded-full text-sm font-semibold text-white shadow-lg">Arrival</span>
+                        </div>
+                        <h3 class="text-3xl font-bold text-text-primary mb-4">Morning Check-in</h3>
+                        <p class="text-text-secondary text-lg leading-relaxed">Registration for Day 2 events and competitions</p>
+                    </div>
+                    
+                    <div class="glass-card p-10 border-l-4 border-accent-pink fade-in-up bg-gradient-to-r from-accent-pink/10 to-accent-violet/10">
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="text-accent-pink font-bold text-xl">9:30 AM - 11:30 AM</span>
+                            <span class="bg-gradient-to-r from-accent-pink to-accent-violet px-4 py-2 rounded-full text-sm font-semibold text-white shadow-lg">Speaker Session</span>
+                        </div>
+                        <h3 class="text-3xl font-bold text-text-primary mb-4">Guest Speaker Sessions</h3>
+                        <p class="text-text-secondary mb-6 text-lg leading-relaxed">Inspiring talks by successful entrepreneurs and industry leaders sharing their journey, insights, and lessons learned</p>
+                        <div class="flex items-center text-text-primary">
+                            <i class="fas fa-star text-accent-pink mr-3 text-xl"></i>
+                            <span class="font-semibold">Multiple speakers from startup ecosystem</span>
+                        </div>
+                    </div>
+                    
+                    <div class="glass-card p-8 border-l-4 border-accent-blue fade-in-up">
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="text-accent-blue font-bold text-xl">11:30 AM - 12:00 PM</span>
+                            <span class="bg-gradient-to-r from-accent-blue to-accent-emerald px-4 py-2 rounded-full text-sm font-semibold text-white shadow-lg">Break</span>
+                        </div>
+                        <h3 class="text-3xl font-bold text-text-primary mb-4">Refreshment Break</h3>
+                        <p class="text-text-secondary text-lg leading-relaxed">Tea, coffee, and networking</p>
+                    </div>
+                    
+                    <div class="glass-card p-10 border-l-4 border-accent-gold fade-in-up bg-gradient-to-r from-accent-gold/10 to-accent-emerald/10">
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="text-accent-gold font-bold text-xl">12:00 PM - 5:00 PM</span>
+                            <span class="bg-gradient-to-r from-accent-gold to-accent-emerald px-4 py-2 rounded-full text-sm font-semibold text-white shadow-lg">Competitions</span>
+                        </div>
+                        <h3 class="text-3xl font-bold text-text-primary mb-4">IPL Auction & Squid Game</h3>
+                        <p class="text-text-secondary mb-6 text-lg leading-relaxed">Exciting competitions with prizes and recognition. Test your skills in strategic bidding and fun challenges!</p>
+                        <div class="flex items-center text-text-primary">
+                            <i class="fas fa-trophy text-accent-gold mr-3 text-xl"></i>
+                            <span class="font-semibold">Amazing prizes for winners</span>
+                        </div>
+                    </div>
+                    
+                    <div class="glass-card p-8 border-l-4 border-accent-emerald fade-in-up">
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="text-accent-emerald font-bold text-xl">5:00 PM - 6:00 PM</span>
+                            <span class="bg-gradient-to-r from-accent-emerald to-accent-gold px-4 py-2 rounded-full text-sm font-semibold text-white shadow-lg">Closing</span>
+                        </div>
+                        <h3 class="text-3xl font-bold text-text-primary mb-4">Award Ceremony & Closing</h3>
+                        <p class="text-text-secondary text-lg leading-relaxed">Prize distribution and closing remarks</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-3 gap-8 mb-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">E-Summit 2025</h3>
+                    <p class="text-gray-400">Organized by E-Cell, Saffrony Institute of Technology, Mehsana</p>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Quick Links</h3>
+                    <div class="space-y-2">
+                        <a href="index.html" class="block text-gray-400 hover:text-purple-400">Home</a>
+                        <a href="about.html" class="block text-gray-400 hover:text-purple-400">About</a>
+                        <a href="schedule.html" class="block text-gray-400 hover:text-purple-400">Schedule</a>
+                        <a href="competitions.html" class="block text-gray-400 hover:text-purple-400">Events</a>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Follow Us</h3>
+                    <div class="flex space-x-4">
+                        <a href="#" class="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-purple-600"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-purple-600"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" class="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-purple-600"><i class="fab fa-facebook"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 pt-8 text-center">
+                <p class="text-gray-400 text-sm">© 2025 E-Cell, SIT. All rights reserved. Built with <i class="fas fa-heart text-red-500"></i> by E-Cell SIT Web Team</p>
+            </div>
+        </div>
+    </footer>
+    
+    <script>
+        // Mobile menu
+        document.getElementById('mobile-menu-button').addEventListener('click', function() {
+            const menu = document.getElementById('mobile-menu');
+            const icon = this.querySelector('i');
+            menu.classList.toggle('active');
+            icon.classList.toggle('fa-bars');
+            icon.classList.toggle('fa-times');
+        });
+
+        // Day tabs
+        const day1Tab = document.getElementById('day1-tab');
+        const day2Tab = document.getElementById('day2-tab');
+        const day1Content = document.getElementById('day1-content');
+        const day2Content = document.getElementById('day2-content');
+
+        day1Tab.addEventListener('click', function() {
+            day1Tab.classList.add('bg-purple-600', 'text-white');
+            day1Tab.classList.remove('text-gray-600');
+            day2Tab.classList.remove('bg-purple-600', 'text-white');
+            day2Tab.classList.add('text-gray-600');
+            day1Content.classList.remove('hidden');
+            day2Content.classList.add('hidden');
+        });
+
+        day2Tab.addEventListener('click', function() {
+            day2Tab.classList.add('bg-purple-600', 'text-white');
+            day2Tab.classList.remove('text-gray-600');
+            day1Tab.classList.remove('bg-purple-600', 'text-white');
+            day1Tab.classList.add('text-gray-600');
+            day2Content.classList.remove('hidden');
+            day1Content.classList.add('hidden');
+        });
+    </script>
+</body>
+</html>
