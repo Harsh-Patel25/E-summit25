@@ -1,53 +1,34 @@
 {
   "version": 2,
   "name": "e-summit-2025",
-  "builds": [
+  "rewrites": [
     {
-      "src": "*.html",
-      "use": "@vercel/static"
+      "source": "/",
+      "destination": "/index.html"
     },
     {
-      "src": "assets/**",
-      "use": "@vercel/static"
-    }
-  ],
-  "routes": [
-    {
-      "src": "/",
-      "dest": "/index.html"
+      "source": "/about",
+      "destination": "/about.html"
     },
     {
-      "src": "/about",
-      "dest": "/about.html"
+      "source": "/schedule",
+      "destination": "/schedule.html"
     },
     {
-      "src": "/schedule",
-      "dest": "/schedule.html"
+      "source": "/competitions",
+      "destination": "/competitions.html"
     },
     {
-      "src": "/competitions",
-      "dest": "/competitions.html"
+      "source": "/events",
+      "destination": "/competitions.html"
     },
     {
-      "src": "/events",
-      "dest": "/competitions.html"
+      "source": "/contact",
+      "destination": "/contact.html"
     },
     {
-      "src": "/contact",
-      "dest": "/contact.html"
-    },
-    {
-      "src": "/register",
-      "dest": "/contact.html#register"
-    },
-    {
-      "src": "/assets/(.*)",
-      "dest": "/assets/$1"
-    },
-    {
-      "src": "/(.*)",
-      "dest": "/index.html",
-      "status": 404
+      "source": "/register",
+      "destination": "/contact.html"
     }
   ],
   "headers": [
@@ -69,10 +50,5 @@
         }
       ]
     }
-  ],
-  "functions": {
-    "assets/js/*.js": {
-      "maxDuration": 10
-    }
-  }
+  ]
 }
